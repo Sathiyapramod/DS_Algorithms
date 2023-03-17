@@ -96,3 +96,23 @@ in Array, there is no restriction on reading and writing elements
 
 #### Direct Implementation - using JS methods push, pop(),peek() etc
 #### Scenario based - using Explicit functions based on Cases
+
+## 2. Queue
+
+### works on FIFO, LILO 
+
+### Enqueue - insertion
+### dequeue - deletion
+
+### * Head >= assisting Dequeue - `arr.shift()`
+### * Tail >= assisting Enqueue - `arr.push(element)`
+
+
+### whenever head and tail are same, QUEUE is empty 
+
+### https://www.cs.usfca.edu/~galles/visualization/QueueArray.html
+
+#### Space complexity
+#### Infix and postfix expressions
+#### Theory of Circular Queue
+
