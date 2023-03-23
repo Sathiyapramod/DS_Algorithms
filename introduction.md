@@ -116,3 +116,93 @@ in Array, there is no restriction on reading and writing elements
 #### Infix and postfix expressions
 #### Theory of Circular Queue
 
+## 23-03-2023
+
+### 1 integer = 4 bytes
+
+### Arrays
+### Continuous Storage from address 100,101,102,......
+
+
+### Linked Lists
+### 1->2->3->4->5 -> is the operator
+### All the elements reside inside node.
+    
+    Nodes
+    * data
+    * Pointer component
+
+    Head = 100(Addres of the First Element)
+    Address = 100-103 data:1 pointer:200
+    Address = 200-203 data:2 pointer:300
+    Address = 300-303 data:3 pointer:400
+    Address = 400-403 data:4 pointer:500
+
+
+        Pros : * Fixed Size => we cannot add new elements
+                * Fixed data type => Homogenous elements
+
+       * in Javascript, Object(data) will be stored as pointer components
+    
+
+```javascript
+
+class Node(){
+    constructor(){
+        this.val = val; //data component
+        this.next = null  //pointer component
+    }
+}
+class linkedlist(){
+    constructor(){
+        this.head = null;  //head to store initial value's pointer
+    }
+}
+
+```
+
+* Operations on Linkedlists
+
+1. Insertion(head,tail,ith position)
+2. Deletion -(head, tail, ith position)
+3. Traversal from head to tail
+
+https://visualgo.net/en/list
+
+```javascript
+function insertNewNodeatHead(head1,val){
+    var newNode = new Node(val);
+    newNode.next = head1;
+    head1 = newNode
+}
+
+function insertNodeatLast(head2,val){
+    var temp = head2;
+    while(temp.next != null){
+        temp = temp.next
+    }
+    newNode = Node(val);
+    temp.next = newNode;
+}
+
+function InsertNodeatI(head,val,i){
+    let point = 0;
+    let temp = head;
+
+    while(temp.next!= null & point<i){
+        temp = temp.next;
+        point++
+    }
+    let prev = temp;
+    let after = prev.next;
+
+    newNode = Node(val);
+    prev.next = newNode
+}
+
+
+
+
+```
+
+
