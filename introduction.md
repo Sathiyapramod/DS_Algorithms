@@ -217,7 +217,21 @@ function deleteAtTail(head){
     temp.next = null;
     delete DeletionNode;
 }    
-
+function deleteatithPosition(head1,i){
+    let point = 0;
+    let temp = head1;
+    
+    while(temp.next!=null && point<i){
+    temp = temp.next;
+    point++;
+    }
+    let prev = temp;
+    let deletionNode = temp.next;
+    let after = temp.next.next;
+    
+    prev.next = after;
+    delete deletionNode;
+}
 
 ```
 
