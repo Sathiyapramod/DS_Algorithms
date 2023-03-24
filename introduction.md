@@ -208,6 +208,15 @@ function deleteAtHead(head1){
     delete temp;
     return head1;
 }
+function deleteAtTail(head){
+    let temp = head;
+    while(temp.next.next !== null){
+     temp = temp.next;
+    }
+    let DeletionNode = temp.next;
+    temp.next = null;
+    delete DeletionNode;
+}    
 
 
 ```
