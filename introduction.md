@@ -171,10 +171,13 @@ https://visualgo.net/en/list
 
 ```javascript
 
-function insertNewNodeatHead(head1,val){
-    let newNode = new Node(val);
-    newNode.next = head1;
-    head1 = newNode
+function insertNewNodeatHead(head,value){
+    if(this.head.value == head){
+     let newNode = new Node(value);
+     newNode.next = this.head;
+     this.head = newNode;
+     return newNode;
+    }
 }
 
 function insertNodeatLast(head2,val){
