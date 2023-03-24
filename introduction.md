@@ -146,7 +146,7 @@ in Array, there is no restriction on reading and writing elements
     
 
 ```javascript
-
+//Mandatory to include at the Top
 class Node(){
     constructor(){
         this.val = val; //data component
@@ -197,12 +197,50 @@ function InsertNodeatI(head,val,i){
     let after = prev.next;
 
     newNode = Node(val);
-    prev.next = newNode
+    prev.next = newNode;
 }
-
-
-
-
 ```
+
+# 24-03-2023
+
+## 1. Greedy Algorithm - 
+## 2. Dynamic Programming - 
+## 3. Divide and Conquer - 
+## 4. Backtracking / Branch and Bound 
+
+## 1. Greedy Algorithm - 
+
+##      Achieving the target with the Easiest/Smartest Way
+
+
+
+
+## 2. Divide & Conquer => Merge Sort Algorithm - 
+
+### * Merge Sort Algorithm
+### * Merge two Sorted Arrays
+
+
+
+
+## 3. Dynamic Programming:
+
+#### => Overlapping Sub-problem (Limitation) - Repeating same calculation again and again
+#### => Optimal SubStructure(Insight) - Solution to sub problem will contribute to solution of Big Problem
+
+####  e.g. Fibonacci series
+
+## 4. Backtracking:
+
+#### => Definition : Doing everthing to arrive at the Answer
+
+### => Searching All possibles states to find the Answer
+
+### e.g. Factorial using Recursion (using Backtracking)
+### e.g. Word Search 
+
+
+
+
 
 
