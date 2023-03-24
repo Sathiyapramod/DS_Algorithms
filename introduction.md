@@ -170,10 +170,14 @@ class linkedlist(){
 https://visualgo.net/en/list
 
 ```javascript
-function insertNewNodeatHead(head1,val){
-    var newNode = new Node(val);
-    newNode.next = head1;
-    head1 = newNode
+
+function insertNewNodeatHead(head,value){
+    if(this.head.value == head){
+     let newNode = new Node(value);
+     newNode.next = this.head;
+     this.head = newNode;
+     return newNode;
+    }
 }
 
 function insertNodeatLast(head2,val){
@@ -239,8 +243,37 @@ function InsertNodeatI(head,val,i){
 ### e.g. Factorial using Recursion (using Backtracking)
 ### e.g. Word Search 
 
-
-
+function deleteAtHead(head1){
+    let temp = head1;
+    head1 = temp.next;
+    
+    delete temp;
+    return head1;
+}
+function deleteAtTail(head){
+    let temp = head;
+    while(temp.next.next !== null){
+     temp = temp.next;
+    }
+    let DeletionNode = temp.next;
+    temp.next = null;
+    delete DeletionNode;
+}    
+function deleteatithPosition(head1,i){
+    let point = 0;
+    let temp = head1;
+    
+    while(temp.next!=null && point<i){
+    temp = temp.next;
+    point++;
+    }
+    let prev = temp;
+    let deletionNode = temp.next;
+    let after = temp.next.next;
+    
+    prev.next = after;
+    delete deletionNode;
+}
 
 
 
