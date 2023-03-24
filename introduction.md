@@ -243,6 +243,7 @@ function InsertNodeatI(head,val,i){
 ### e.g. Factorial using Recursion (using Backtracking)
 ### e.g. Word Search 
 
+```
 function deleteAtHead(head1){
     let temp = head1;
     head1 = temp.next;
@@ -274,6 +275,7 @@ function deleteatithPosition(head1,i){
     prev.next = after;
     delete deletionNode;
 }
+```
 
 
 
