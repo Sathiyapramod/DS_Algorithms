@@ -170,8 +170,9 @@ class linkedlist(){
 https://visualgo.net/en/list
 
 ```javascript
+
 function insertNewNodeatHead(head1,val){
-    var newNode = new Node(val);
+    let newNode = new Node(val);
     newNode.next = head1;
     head1 = newNode
 }
@@ -200,7 +201,13 @@ function InsertNodeatI(head,val,i){
     prev.next = newNode
 }
 
-
+function deleteAtHead(head1){
+    let temp = head1;
+    head1 = temp.next;
+    
+    delete temp;
+    return head1;
+}
 
 
 ```
