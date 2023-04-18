@@ -1,4 +1,4 @@
-let arr = [14,7,3,12,9,11,6,2];
+let arr = [50,30,78,95,16,32,45,2];
 
 //Time Complexity = O(n log n);
 
