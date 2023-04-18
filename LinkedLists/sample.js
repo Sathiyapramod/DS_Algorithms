@@ -13,7 +13,7 @@ class Linkedlist {
   insertNode(value) {
     this.head = new Node(value, this.head);
     this.size++;
-    // return this.head;
+    
   }
 
   addElementToNode(value) {
@@ -35,17 +35,18 @@ class Linkedlist {
       newNode.next = this.head;
       this.head = newNode;
     }
+    return this.head;
   }
 
-  insertNodeatLast(head, value) {
-    let temp = head;
-    while (temp.next != null) {
-      temp = temp.next;
-    }
-    let newNode = new Node(value);
-    temp.next = newNode;
-    return temp;
-  }
+  // insertNodeatLast(head, value) {
+  //   let temp = head;
+  //   while (temp.next != null) {
+  //     temp = temp.next;
+  //   }
+  //   let newNode = new Node(value);
+  //   temp.next = newNode;
+  //   return temp;
+  // }
 
   printNode() {
     let currentValue = this.head;
@@ -54,9 +55,16 @@ class Linkedlist {
       currentValue = currentValue.next;
     }
   }
-  // printvaluesSeparatedBySpace(data){
-  //   console.log(data);
-  // }
+  printList(flag) {
+    let current = flag.head;
+    console.log(current);
+    let temp = "";
+    while (current) {
+      temp += current.value + " ";
+      current = current.next;
+    }
+    console.log(temp);
+  }
   getNode() {
     let final = this.head;
     return final;
@@ -65,11 +73,10 @@ class Linkedlist {
 
 const ll = new Linkedlist();
 // ll.printNode();
-let data = ll.getNode();
+// let data = ll.getNode();
 ll.insertNode(10);
 ll.addElementToNode(20);
-ll.addElementToNode(50);
-ll.insertNodeatFirst(10, 1);
-// ll.printvaluesSeparatedBySpace(data);
+ll.addElementToNode(30);
+// console.log(ll);
 
-ll.insertNodeatLast(data, 100);
+ll.printList(ll);

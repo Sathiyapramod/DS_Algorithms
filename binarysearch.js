@@ -19,4 +19,5 @@ let binarysearch = (arr,value)=>{
     }
     return -1;
 };
+
 console.log(binarysearch(arr,122));
