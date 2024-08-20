@@ -3,7 +3,10 @@
 ### Algorithms
 
 #### Search Algorithms
-
+  - Basics
+    - [Linear Search](./binarysearch.js)
+    - [Binary Search](./binarysearch.js)
+      
 
 #### Sorting Algorithms
   - Basics
