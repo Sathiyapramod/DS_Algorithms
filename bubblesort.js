@@ -1,16 +1,16 @@
-let arr = [64, 25, 12, 10, 11];
-
-
 function bubbleSort(arr){
-
-for(let i=0;i<arr.length;i++)
-    for(let j=0;j<(arr.length-i-1);j++)
-        if(arr[j] > arr[j+1]){
-            let temp = arr[j];
-            arr[j] = arr[j+1];
-            arr[j+1] = temp;
+    let swpd = true;
+    do{
+        swpd = false;
+        for(let i=0;i<arr.length-1;i++){
+            if(arr[i] > arr[i+1]){
+                // perform swapping of numbers
+                [arr[i],arr[i+1]] = [arr[i+1],arr[i]]
+                swpd = true;
+            }
         }
-return (arr);
+    } while(swpd)
+    return arr;
 }
 
-console.log(bubbleSort(arr));
+console.log(bubbleSort([64, 25, 12, 10, 11]));
