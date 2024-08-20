@@ -1,6 +1,6 @@
   
-  let input1 = userInput[2].split(" ");
-  let input2 = userInput[3].split(" ");
+let input1 = userInput[2].split(" ");
+let input2 = userInput[3].split(" ");
 
 class Node{
     constructor(value){
