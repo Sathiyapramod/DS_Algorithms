@@ -6,5 +6,8 @@
 
 
 #### Sorting Algorithms
+  - Basics
+    - [Bubble Sort](./bubblesort.js)
+
 #### 
 
