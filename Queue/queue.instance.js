@@ -22,6 +22,7 @@ function queue(){
     let current = front++;
     let temp = item[current];
     item[current] = null;
+    count--;
     return temp;
   }
 
@@ -31,6 +32,9 @@ function queue(){
   //rear
   this.rear = ()=> items[rear];
 
+  //size
+  this.size = ()=> count;
+  
   //isEmpty
   this.empty = ()=> count === 0;
 
