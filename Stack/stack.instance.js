@@ -37,7 +37,13 @@ function stack(){
 }
 
 
-
-let stc = new stack();
-stc.push(3);
-console.log(stc.size());
+stack.push(1);
+stack.push(2);
+stack.push(3);
+console.log(stack.peek());
+console.log(stack.isEmpty());
+console.log(stack.size());
+console.log(stack.pop());
+console.log(stack.size());
+stack.clear();
+console.log(stack.isEmpty());
