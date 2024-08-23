@@ -13,6 +13,25 @@ function stack(){
     // --top - first decrements and performs the operation
   }
 
-  //
+  // peek
+  this.peek = ()=>{
+    return items[top-1]
+    // remember --top and top-1 are different
+  }
+
+  //isEmpty()
+  this.isEmpty =  ()=>{
+    return top === 0;
+  }
+
+  //clear
+  this.clear = ()=> {
+    top = 0;
+  }
+
+  // size 
+  this.size = ()=>{
+    return top;
+  }
   
 }
