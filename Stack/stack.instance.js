@@ -35,3 +35,9 @@ function stack(){
   }
   
 }
+
+
+
+let stc = new stack();
+stc.push(3);
+console.log(stc.size());
