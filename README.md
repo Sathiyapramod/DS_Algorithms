@@ -17,4 +17,4 @@
 ### Basic Data Structures 
 
 - [Stack](./Stack/stack.instance.js)
-
+- [Queue](./Queue/queue.instance.js)
