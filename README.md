@@ -12,5 +12,9 @@
   - Basics
     - [Bubble Sort](./bubblesort.js)
 
-#### 
+### Data Structures
+
+### Basic Data Structures 
+
+- [Stack](./Stack/stack.instance.js)
 
