@@ -18,3 +18,7 @@
 
 - [Stack](./Stack/stack.instance.js)
 - [Queue](./Queue/queue.instance.js)
+
+#### Abstract Data Types
+
+- [Linked List](./LinkedLists/linkedlist.instance.js)
