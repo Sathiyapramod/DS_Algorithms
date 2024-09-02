@@ -21,4 +21,4 @@
 
 #### Abstract Data Types
 
-- [Linked List](./LinkedLists/linkedlist.instance.js)
+- [Linked List](./LinkedLists/function.linkedlist.js)
