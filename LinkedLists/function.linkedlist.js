@@ -48,6 +48,11 @@ function linkedlist(){
     this.isEmpty = function(){
       return length === 0;
     };
+
+    //Check and return the size of the list
+    this.size = function(){
+        return length;
+    }
 }
 
 
@@ -59,4 +64,5 @@ ll.append('anil');
 ll.append('29');
 console.log(ll.toArray());
 console.log(ll.isEmpty());
+console.log(ll.size());
 
