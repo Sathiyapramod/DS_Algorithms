@@ -42,7 +42,12 @@ function linkedlist(){
         current = current.next;
       }
       return arr;
-};
+    };
+
+    //Check if list is empty
+    this.isEmpty = function(){
+      return length === 0;
+    };
 }
 
 
@@ -53,4 +58,5 @@ ll.append('prashant');
 ll.append('anil');
 ll.append('29');
 console.log(ll.toArray());
+console.log(ll.isEmpty());
 
