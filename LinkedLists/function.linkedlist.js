@@ -8,6 +8,7 @@ function linkedlist(){
     
     let head = null;
     
+    // inserts element at the end of the list
     
     this.append = function(el){
         // creating a new node
