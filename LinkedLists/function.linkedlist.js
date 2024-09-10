@@ -32,7 +32,8 @@ function linkedlist(){
         // increment the length however
         length++;
     }
-    
+
+    // We will push all the elements of the list to the array and return it
     this.toArray = function(){
       let arr = [],
       current = head;
