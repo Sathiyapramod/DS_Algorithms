@@ -9,7 +9,8 @@ function linkedlist(){
     let head = null;
     
     // inserts element at the end of the list
-    
+    // We will check if head is empty then assign the current node to it, 
+    // else add the node as a reference of the next element to the previous node.
     this.append = function(el){
         // creating a new node
         let newEl =  new node(el), current;
