@@ -1,6 +1,6 @@
 ## Algorithms and Data Structures
 
-### Algorithms
+### <u>Algorithms</u>
 
 #### Search Algorithms
   - Basics
@@ -12,7 +12,7 @@
   - Basics
     - [Bubble Sort](./bubblesort.js)
 
-### Data Structures
+### <u>Data Structures</u>
 
 ### Basic Data Structures 
 
