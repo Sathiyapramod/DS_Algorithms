@@ -99,7 +99,7 @@ class LinkedList {
             result.push(current.data);
             current = current.next;
         }
-        return result;
+        return result.join(" → ");
     }
 
     removeTop() {
@@ -163,17 +163,49 @@ class LinkedList {
         }
         return prev;
     }
+
+    remove(el) {
+        // check if head is available
+        if (!this.head) {
+            return;
+        }
+
+        // check if element is at first node itself
+        if (this.head.data === el) {
+            // removing the first node itself
+            this.head = this.head.next;
+        }
+
+        let current = this.head;
+
+        // !! here both current and this.head points to the head node (same)
+        // !! so referring to the same node will alter the next and data at required positions
+
+        while (current.next) {
+            // check if data is equal to element
+            if (current.next.data === el) {
+                current.next = current.next.next;
+            } else current = current.next;
+        }
+        return this.head;
+    }
 }
 
 const ll = new LinkedList();
-ll.addFirst(1);
-ll.addFirst(-1);
-ll.addLast(3);
+// ll.addFirst(1);
+// ll.addFirst("2");
+// ll.addFirst(3);
+// ll.addFirst("2");
+// ll.addFirst(4);
+// ll.addFirst(-1);
+// ll.addLast(3);
+// ll.addAt(3, -2);
+ll.addFirst(7);
+ll.addFirst(7);
+ll.addFirst(7);
+ll.addFirst(7);
+ll.addFirst(7);
+
 console.log(ll.printList());
-ll.addAt(3, -2);
-console.log(ll.size());
-console.log(ll.size());
+ll.remove(7);
 console.log(ll.printList());
-ll.removeTop();
-console.log(ll.printList());
-console.log(ll.reverse());
