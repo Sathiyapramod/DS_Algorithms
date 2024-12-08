@@ -145,6 +145,24 @@ class LinkedList {
             current.next = current.next.next;
         }
     }
+
+    reverse() {
+        let prev = null;
+        let current = this.head;
+
+        // traversing through the linked list
+        while (current) {
+            // assigning the next node to a temp variable
+            const nextNode = current.next;
+            // changing the next pointer of current to prev
+            current.next = prev;
+            // move the previous to current;
+            prev = current;
+            // assign the nextNode to current
+            current = nextNode;
+        }
+        return prev;
+    }
 }
 
 const ll = new LinkedList();
@@ -163,3 +181,4 @@ ll.removeLast();
 console.log(ll.printList());
 ll.removeAt(1);
 console.log(ll.printList());
+console.log(ll.reverse());
