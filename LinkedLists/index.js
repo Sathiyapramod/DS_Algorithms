@@ -215,8 +215,26 @@ class LinkedList {
             i++;
             current = current.next;
         }
-
         return "-1";
+    }
+    search(el) {
+        if (!this.head) {
+            return null;
+        }
+
+        // case if exists at the head itself
+        if (this.head.data === el) {
+            return this.head;
+        }
+
+        let current = this.head;
+        while (current) {
+            if (current.data === el) {
+                return current; // return the node
+            }
+            current = current.next;
+        }
+        return null;
     }
 }
 
@@ -236,3 +254,5 @@ console.log(ll.get(0));
 console.log(ll.get(1));
 console.log(ll.get(2));
 console.log(ll.get(3));
+console.log(ll.printList());
+console.log(ll.search(3));
