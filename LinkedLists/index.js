@@ -75,6 +75,7 @@ class LinkedList {
             console.log("Invalid Index");
             return;
         }
+        // initializing the node
         const newNode = new Node(data);
         if (index === 0) {
             newNode.next = this.head;
@@ -84,10 +85,14 @@ class LinkedList {
         let current = this.head;
         // !! here both current and this.head points to the head node (same)
         // !! so referring to the same node will alter the next and data at last
+
+        // traversing upto the previous index
         for (let i = 0; i < index - 1; i++) {
             current = current.next;
         }
+        // assigning the next for new node
         newNode.next = current.next;
+        // assigning the new node to the previous index
         current.next = newNode;
         return;
     }
@@ -176,6 +181,9 @@ class LinkedList {
             this.head = this.head.next;
         }
 
+        // ** Approach Two
+        // let dummy = {next: this.head}
+        // let current = dummy;
         let current = this.head;
 
         // !! here both current and this.head points to the head node (same)
@@ -187,25 +195,44 @@ class LinkedList {
                 current.next = current.next.next;
             } else current = current.next;
         }
+        // this.head = dummy.next
         return this.head;
+    }
+    get(index) {
+        if (!this.head) {
+            return null;
+        }
+
+        if (index < 0 || index > this.size()) {
+            return null;
+        }
+
+        let current = this.head;
+
+        let i = 0;
+        while (current) {
+            if (i === index) return current.data;
+            i++;
+            current = current.next;
+        }
+
+        return "-1";
     }
 }
 
 const ll = new LinkedList();
-// ll.addFirst(1);
-// ll.addFirst("2");
-// ll.addFirst(3);
-// ll.addFirst("2");
-// ll.addFirst(4);
-// ll.addFirst(-1);
-// ll.addLast(3);
-// ll.addAt(3, -2);
-ll.addFirst(7);
-ll.addFirst(7);
-ll.addFirst(7);
-ll.addFirst(7);
-ll.addFirst(7);
+ll.addFirst(1);
+ll.addFirst("2");
+ll.addFirst(3);
+ll.addFirst("2");
+ll.addFirst(4);
+ll.addFirst(-1);
+ll.addLast(3);
+ll.addAt(3, -2);
 
 console.log(ll.printList());
-ll.remove(7);
-console.log(ll.printList());
+// console.log(ll.printList());
+console.log(ll.get(0));
+console.log(ll.get(1));
+console.log(ll.get(2));
+console.log(ll.get(3));
