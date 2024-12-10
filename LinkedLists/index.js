@@ -169,6 +169,11 @@ class LinkedList {
         return prev;
     }
 
+    /**
+     *
+     * @param {*} el - node element to be removed
+     * @returns - revised headlist
+     */
     remove(el) {
         // check if head is available
         if (!this.head) {
@@ -236,9 +241,37 @@ class LinkedList {
         }
         return null;
     }
+    removeFromEnd(index) {
+        if (!this.head) return;
+        if (index > this.size()) return "Invalid index";
+
+        // initialize two nodes
+        let slow = this.head;
+        // this fast will be traversed till the end of the index
+        let fast = this.head;
+
+        for (let i = 0; i < index; i++) {
+            //moving till the mirror index in the opposite direction
+            fast = fast.next;
+        }
+
+        if (!fast) {
+            return this.head.next;
+        }
+
+        while (fast.next) {
+            fast = fast.next; // moves by l - nth place
+            slow = slow.next; // moves by l-(n-2)st place
+        }
+
+        slow.next = slow.next.next;
+        return this.head;
+    }
 }
 
 const ll = new LinkedList();
+const l1 = new LinkedList();
+const l2 = new LinkedList();
 ll.addFirst(1);
 ll.addFirst("2");
 ll.addFirst(3);
@@ -255,4 +288,48 @@ console.log(ll.get(1));
 console.log(ll.get(2));
 console.log(ll.get(3));
 console.log(ll.printList());
-console.log(ll.search(3));
+// console.log(ll.search(3));
+ll.removeFromEnd(1);
+console.log("@first@", ll.printList());
+ll.removeFromEnd(3);
+console.log("@second@", ll.printList());
+
+l1.addFirst(6);
+l1.addFirst(4);
+l1.addFirst(2);
+
+l2.addFirst(1);
+l2.addFirst(8);
+l2.addFirst(5);
+
+console.log(l1.printList());
+console.log(l2.printList());
+
+function addTwoList(l1, l2) {
+    console.log("@@list", l1, l2);
+    //  2 → 4 → 6
+    //  5 → 8 → 1
+    // expected output
+    //  7 → 2 → 8 (4+8 is carrying 1 to the next node)
+    let dummy = new Node(0);
+    let current = dummy;
+    let carry = 0;
+
+    while (l1 !== null || l2 !== null || carry > 0) {
+        let v1 = l1 ? l1.data : 0;
+        let v2 = l2 ? l2.data : 0;
+        console.log(v1, v2);
+
+        // // reassigning the carry as
+        carry = Math.floor(sum / 10);
+        sum = sum % 10;
+        current = new Node(sum); // assigning the node with resultant value
+        current = current.next; // to continue the iteration
+        // // proceeding to next iteration
+        if (l1) l1 = l1.next;
+        if (l2) l2 = l2.next;
+    }
+    return dummy.next;
+}
+
+console.log(addTwoList(l1.head, l2.head));
