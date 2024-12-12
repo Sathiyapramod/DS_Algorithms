@@ -1,59 +1,42 @@
-  
-let input1 = userInput[2].split(" ");
-let input2 = userInput[3].split(" ");
+import { LinkedList } from "./index.js";
 
-class Node{
-    constructor(value){
-        this.value = value;
-        this.next = null;
-    }
-}
-class  LinkedList{
-    constructor(value){
-        this.value = value;
-        this.size = 0;
-    }
-    insertNodeatHead(value){
-        let node = new Node(value);
-        this.head = node;
-        this.size++;
-    }
-    addNodes(value){
-        let node = new Node(value);
-        if(!this.head)  this.head;
-        else{
-            let current = this.head;
-            while(current.next){
-                current = current.next;
-            }
-            current.next = node;
-            return this.head;
+/*
+Test Cases
+Delete on empty list -> None
+Delete None -> None
+Delete on one node -> [None]
+Delete on multiple nodes
+ */
+class lists extends LinkedList {
+    deleteMiddle() {
+        if (!this.head) return;
+
+        if (this.size() === 1) return this.head;
+
+        let middle;
+        if (this.size() % 2 === 0) {
+            middle = this.size() / 2 - 1;
         }
-    }
-    printNode(list){
-        let current = list.head;
-        // return current
-        let temp="";
-        while(current){
-            temp += current.value + " ";
+        middle = (this.size() - 1) / 2;
+        //normalized middle node position in the list
+
+        let current = this.head;
+        // traverse through the list upto middle node position
+        for (let i = 0; i < middle - 1; i++) {
             current = current.next;
         }
-        return temp;
-    }
-    mergelist(h1,h2){
-        
+        // console.log(current);
+        current.next = current.next.next;
     }
 }
 
-let list1 = new LinkedList();
-let list2 = new LinkedList();
+const list = new lists();
 
-list1.insertNodeatHead(input1[0])
-for(let i=1;i<input1.length;i++)
-    list1.addNodes(input1[i])
-    list2.insertNodeatHead(input2[0])
-for(let j=1;j<input2.length;j++)
-    list2.addNodes(input2[j])
-
-console.log(list1.printNode(list1))
-console.log(list2.printNode(list2))
+// list.destroy();
+// list.addFirst(5);
+list.addFirst(4);
+list.addFirst(3);
+list.addFirst(2);
+list.addFirst(1);
+list.printList();
+list.deleteMiddle();
