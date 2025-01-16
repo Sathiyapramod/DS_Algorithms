@@ -69,7 +69,6 @@ class linkedlist {
         for (let i = 1; i < length - k; i++) {
             newTail = newTail.next;
         }
-        console.log(newTail);
         let newHead = newTail.next;
 
         newTail.next = null;
