@@ -8,7 +8,7 @@ function mergedsort(list) {
     const right = list.slice(mid);
 
     // recursively make sorting
-    return list;
+    return merge(mergedsort(left), mergedsort(right));
 }
 
 function merge(left, right) {
