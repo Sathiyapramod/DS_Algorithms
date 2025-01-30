@@ -1,20 +1,31 @@
-let arr = [50,30,78,95,16,32,45,2];
-
+let arr = [50, 30, 78, 95, 16, 32, 45, 2];
 //Time Complexity = O(n log n);
+function mergedsort(list) {
+    if (list.length < 2) return list;
 
-function mergedsort(arr) {
-  if (arr.length <= 1) return arr;
-  let mid = Math.floor(arr.length / 2);
-  let left = mergedsort(arr.slice(0, mid));
-  let right = mergedsort(arr.slice(mid));
-  function merge(left, right) {
-    let sortedArr = [];
-    while (left.length && right.length) {
-      if (left[0] < right[0]) sortedArr.push(left.shift());
-      else sortedArr.push(right.shift());
+    const mid = Math.floor(list.length / 2);
+    const left = list.slice(0, mid);
+    const right = list.slice(mid);
+
+    // recursively make sorting
+    return list;
+}
+
+function merge(left, right) {
+    const result = [];
+    let i = 0,
+        j = 0;
+
+    // merging the left and right arrays
+    while ((i < left.length) & (j < right.length)) {
+        if (left[i] <= right[j]) result.push(left[i++]);
+        else result.push(right[j++]);
     }
-    return [...sortedArr, ...left, ...right];
-  }
-  return merge(left, right);
+
+    // fill the remaining elements
+    while (i < left.length) result.push(left[i++]);
+    while (j < right.length) result.push(right[j++]);
+
+    return result;
 }
 console.log(mergedsort(arr));

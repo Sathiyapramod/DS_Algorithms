@@ -1,15 +1,16 @@
-function bubbleSort(arr){
+// time complexity is O(n^2)
+function bubbleSort(arr) {
     let swpd = true;
-    do{
+    do {
         swpd = false;
-        for(let i=0;i<arr.length-1;i++){
-            if(arr[i] > arr[i+1]){
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
                 // perform swapping of numbers
-                [arr[i],arr[i+1]] = [arr[i+1],arr[i]]
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
                 swpd = true;
             }
         }
-    } while(swpd)
+    } while (swpd);
     return arr;
 }
 
