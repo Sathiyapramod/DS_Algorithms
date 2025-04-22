@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.input-box {
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.city-list {
+  margin-bottom: 8px;
+  height: auto;
+}

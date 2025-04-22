@@ -5,13 +5,13 @@ numberRange(7, 7); // should return [7] (only one number)
  */
 
 function numberRange(startNum: number, endNum: number): number[] {
-    if (startNum === endNum) {
-        return [startNum];
-    }
+  if (startNum === endNum) {
+    return [startNum];
+  }
 
-    const numbers = numberRange(startNum, endNum - 1);
-    numbers.push(endNum);
-    return numbers;
+  const numbers = numberRange(startNum, endNum - 1);
+  numbers.push(endNum);
+  return numbers;
 }
 
 console.log(numberRange(1, 5));
