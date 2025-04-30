@@ -8,7 +8,6 @@ function calculateCurrent(arr) {
   /*
   create an array of length (length = largest element in the 'arr')
   with its index -> increment its count
-  
    */
 
   const len = arr.length;
