@@ -7,15 +7,15 @@ export class MinHeap {
     this.length = 0;
   }
 
-  private parent(idx: number): number {
+  private parentIndex(idx: number): number {
     let index = Math.floor((idx - 1) / 2);
-    return this.heap[index];
+    return index;
   }
-  private leftChild(idx: number): number {
-    return this.heap[2 * idx + 1];
+  private leftIndex(idx: number): number {
+    return 2 * idx + 1;
   }
-  private rightChild(idx: number): number {
-    return this.heap[2 * idx + 2];
+  private rightIndex(idx: number): number {
+    return 2 * idx + 2;
   }
 
   public insert(x: number) {
@@ -35,7 +35,7 @@ export class MinHeap {
 
   private heapifyDown(idx: number) {
     let currIdx = idx;
-    const [leftIdx, rightIdx] = [this.leftChild(idx), this.rightChild(idx)];
+    const [leftIdx, rightIdx] = [this.leftIndex(idx), this.rightIndex(idx)];
 
     let smallestIdx = currIdx;
 
@@ -46,20 +46,19 @@ export class MinHeap {
       // swapping the right element
       smallestIdx = rightIdx;
     if (smallestIdx !== currIdx) {
-      this.swap(leftIdx, rightIdx);
-      this.heapifyDown(currIdx);
+      this.swap(currIdx, smallestIdx);
+      this.heapifyDown(smallestIdx);
     }
   }
 
   public heapifyUp(idx: number) {
     // to insert the element at the bottom of the heap
     let currIdx = idx;
-    console.log(currIdx);
     while (currIdx > 0) {
-      const parentIdx = this.parent(currIdx);
+      const parentIdx = this.parentIndex(currIdx);
       if (this.heap[currIdx] < this.heap[parentIdx]) {
         this.swap(currIdx, parentIdx);
-        console.log(this.heap);
+        currIdx = parentIdx;
       } else break;
     }
   }

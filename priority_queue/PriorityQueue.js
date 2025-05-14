@@ -7,15 +7,15 @@ var MinHeap = /** @class */ (function () {
         this.heap = [];
         this.length = 0;
     }
-    MinHeap.prototype.parent = function (idx) {
+    MinHeap.prototype.parentIndex = function (idx) {
         var index = Math.floor((idx - 1) / 2);
-        return this.heap[index];
+        return index;
     };
-    MinHeap.prototype.leftChild = function (idx) {
-        return this.heap[2 * idx + 1];
+    MinHeap.prototype.leftIndex = function (idx) {
+        return 2 * idx + 1;
     };
-    MinHeap.prototype.rightChild = function (idx) {
-        return this.heap[2 * idx + 2];
+    MinHeap.prototype.rightIndex = function (idx) {
+        return 2 * idx + 2;
     };
     MinHeap.prototype.insert = function (x) {
         this.heap.push(x);
@@ -33,7 +33,7 @@ var MinHeap = /** @class */ (function () {
     };
     MinHeap.prototype.heapifyDown = function (idx) {
         var currIdx = idx;
-        var _a = [this.leftChild(idx), this.rightChild(idx)], leftIdx = _a[0], rightIdx = _a[1];
+        var _a = [this.leftIndex(idx), this.rightIndex(idx)], leftIdx = _a[0], rightIdx = _a[1];
         var smallestIdx = currIdx;
         if (leftIdx < this.length && this.heap[leftIdx] < this.heap[smallestIdx])
             // swapping th left element
@@ -42,19 +42,18 @@ var MinHeap = /** @class */ (function () {
             // swapping the right element
             smallestIdx = rightIdx;
         if (smallestIdx !== currIdx) {
-            this.swap(leftIdx, rightIdx);
-            this.heapifyDown(currIdx);
+            this.swap(currIdx, smallestIdx);
+            this.heapifyDown(smallestIdx);
         }
     };
     MinHeap.prototype.heapifyUp = function (idx) {
         // to insert the element at the bottom of the heap
         var currIdx = idx;
-        console.log(currIdx);
         while (currIdx > 0) {
-            var parentIdx = this.parent(currIdx);
+            var parentIdx = this.parentIndex(currIdx);
             if (this.heap[currIdx] < this.heap[parentIdx]) {
                 this.swap(currIdx, parentIdx);
-                console.log(this.heap);
+                currIdx = parentIdx;
             }
             else
                 break;
