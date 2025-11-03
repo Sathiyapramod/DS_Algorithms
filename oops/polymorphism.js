@@ -28,5 +28,5 @@ console.log(testDrive.makeDrive());
 
 const customDrive = new Drive("Ducati");
 console.log(customDrive.makeDrive());
-// here the method got over-rided
+// here the method got over-ride
 // Output: Driving a Ducati
